@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="/javascripts/fetch-script.js" defer></script>
+  <title>SrcML Converter</title>
+</head>
+<!-- variable that will hold the data return from the form -->
+<% var output %>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <a class="img-logo" href="https://www.rit.edu?" target="_blank"><img src="/images/Screenshot-2022-11-16.png"
+            alt="RIT-log" /></a>
+        <nav class="navBar">
+          <ul class="navBarItems">
+            <li>
+              <a class="active-page" href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#"> Contact</a>
+            </li>
+            <li>
+              <a href="#"> Tutorial</a>
+            </li>
+            <li id="right-position">
+              <a class="loginOption" href="#">Log in</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="searchBar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <!-- <h1>SrcML Application</h1> -->
+      </header>
+      <div class="appDescription">
+        <p>
+          srcML (source M L) is a document-oriented XML representation of source
+          code. It was created in a collaborative effort between Michael L.
+          Collard and Jonathan I. Maletic. The abbreviation, srcML, is short for
+          Source Markup Language. srcML wraps source code (text) with
+          information from the Abstract Syntax Tree or AST (tags) into a single
+          XML document. All original text is preserved so that the original
+          source code document can be recreated from the srcML markup. The only
+          exception is the possibility of newline normalization <br />
+
+          The purpose of srcML is to provide full access to the source code at
+          the lexical, documentary, structural, and syntactic levels. The format
+          also provides easy support for fact-extraction and transformation. It
+          is supported by the srcML toolkit maintained on the srcML website and
+          has been shown to perform scalable, lightweight fact-extraction and
+          transformation. <br />
+          <br />
+
+          Our website provide a frienly approcah in which the user does not have
+          to use the command interface or type any command to convert his code
+          into srcML markup. The website will convert the source code, return
+          the ouput to the screen and allow the user to download the srcMl
+          output into a fiile.
+        </p>
+      </div>
+      <div class="mainSection">
+        <div class="form1">
+          <form action="/form" method="POST" id="webForm" enctype="multipart/form-data">
+            <fieldset>
+              <legend>Source Code Input</legend>
+              <textarea name="codeinput" id="codeinput" cols="30" rows="10"
+                placeholder="paste your code here"></textarea>
+              <br />
+              <label for="languageOptions">
+                Select Language <select name="languageOptions">
+                  <option value="none">choose a language</option>
+                  <option value="java">Java</option>
+                  <option value="c">C</option>
+                  <option value="c++">C++</option>
+                  <option value="c#">C#</option>
+                </select>
+              </label>
+              <label for="uploadedFile">
+                <input id="uploadedFile" type="file" name="uploadedFile" />
+              </label>
+              <br />
+              <label for="fname">First Name
+                <input id="fname" type="text" name="fname" />
+              </label>
+              <br />
+              <label for="lname">Last Name
+                <input id="lname" type="text" name="lname" />
+              </label>
+              <br />
+              <label for="email">Email
+                <input id="email" type="email" name="email" />
+              </label>
+              <br />
+            </fieldset>
+            <input id="demo" class="submitbtn" type="submit" value="Submit" />
+          </form>
+        </div>
+        <div class="form2">
+          <form action="#" method="#" id="webForm2">
+            <fieldset>
+              <legend>Output Data</legend>
+              <textarea name="rawCode" id="rawCode" cols="30" rows="10" placeholder="OutPut"><%= output %></textarea>
+              <br />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="download-button">
+        <input id="download-btn" class="download-btn" type="submit" value="Download" />
+      </div>
+      <footer class="footer">
+        <div class="author-footer">
+          <p>ISTE 645 Galekwan Sango</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+
+</html>

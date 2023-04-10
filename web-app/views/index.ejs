@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles.css" />
+		<script src="/app-script.js" defer></script>
+		<title>SrcML Converter</title>
+	</head>
+	<!-- variable that will hold the data return from the form -->
+	<% var output %> 
+
+	<body>
+		<main class="entirePage">
+			<header class="header">
+				<a href="https://www.rit.edu/" target="_blank"
+					><img src="/RIT_cmyk_hor_k.jpg" alt="RIT-log"
+				/></a>
+				<nav class="menu">
+					<ul class="menuList">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+						
+					</ul>
+				</nav>
+				<h1>Web App</h1>
+			</header>
+			<div class="mainSection">
+				<div class="form1">
+					<form action="/form" method="POST" id="webForm" enctype="multipart/form-data">
+						<fieldset>
+							<legend>Source Code Input</legend>
+							<textarea
+								for="codeinput"
+								name="codeinput"
+								id="codeinput"
+								cols="30"
+								rows="10"
+								placeholder="paste your code"
+							></textarea>
+							<br />
+							<label for="upload">
+								<input id="uploadedfile" type="file" name="upload"
+							/></label>
+							<br />
+							<label for="first_name">First Name </label><input id="fname" type="text" name="fname"
+							/>
+							<br />
+							<label for="last_name">Last Name </label>
+								<input id="lname" type="text" name="lname" />
+							<br />
+							<label for="email">Email </label>
+							<input id="email" type="email" name="email"/>
+							<br />
+						</fieldset>
+						<input id="demo" class="submitbtn" type="submit" value="submit" />
+					</form>
+				</div>
+				<div class="form2">
+					<form action="" method=""></form id="webForm2">
+					<fieldset>
+						<legend>Output Data</legend>
+						<textarea
+							name=""
+							id="rawCode"
+							cols="30"
+							rows="10"
+							placeholder="OutPut"
+						><%= output %></textarea>
+						<br />
+					</fieldset>
+				</div>
+			</div>
+			<footer class="footer"></footer>
+		</main>
+	</body>
+</html>
